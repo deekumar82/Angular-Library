@@ -1,0 +1,65 @@
+<div class="card-body">
+  <form novalidate  #bookForm="ngForm">
+    <fieldset>
+      <legend>Basic Book Information</legend>
+
+      <div class="form-group row">
+        <label class="col-md-2 col-form-label"
+               for="bookName">Book Name</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="bookName"
+                 type="text"
+                 placeholder="Book Name"
+                 required
+                 minlength="3"
+                 [(ngModel)]=book.bookName
+                 name="bookName"/>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-md-2 col-form-label"
+               for="publisherName">Publisher Name</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="publisherName"
+                 type="text"
+                 required
+                 placeholder="Publisher Name"
+                 [(ngModel)]=book.publisherName
+                 name="publisherName"/>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-md-2 col-form-label"
+               for="authorname">Author Name</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                    id="authorname"
+                    placeholder="Author Name"
+                    [(ngModel)]= book.authorName
+                    required
+                    name="authorname"/>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-md-2 col-form-label"
+               for="price">Price</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                    id="price"
+                    placeholder="Price"
+                    [(ngModel)]=book.price
+                    required
+                    name="price"/>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>
+<div class='alert alert-danger'
+     *ngIf='errorMessage'>{{errorMessage}}
+</div>
